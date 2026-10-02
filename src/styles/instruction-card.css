@@ -1,0 +1,82 @@
+/* ─── Instruction card ────────────────────────────────────── */
+
+.icard {
+  overflow: hidden;
+  border-width: 1.5px;
+  border-radius: 18px;
+  transition: border-color .2s;
+}
+.icard.is-open { border-color: var(--line-strong); }
+
+.icard__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 22px;
+  cursor: pointer;
+}
+.icard__info { flex: 1; min-width: 0; }
+.icard__info .tags { margin-bottom: 8px; }
+.icard__title { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--text); }
+.icard__meta { margin-top: 4px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.icard__side { display: flex; flex-shrink: 0; align-items: center; gap: 10px; padding-top: 2px; }
+.icard__chevron { font-size: 12px; color: var(--muted); }
+
+.icard__body { padding: 0 22px 22px; border-top: 1px solid var(--line-soft); }
+.icard__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 20px;
+  margin-top: 16px;
+}
+.icard__col { display: flex; flex-direction: column; gap: 16px; }
+
+/* Photo */
+.photo {
+  overflow: hidden;
+  line-height: 0;
+  background: var(--inset);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+}
+.photo img { display: block; width: 100%; height: auto; }
+.photo--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 280px;
+  line-height: normal;
+  border-style: dashed;
+  border-color: var(--faint);
+  color: var(--faint);
+  font-size: 12px;
+}
+.photo--empty i { font-size: 40px; }
+
+/* Notes */
+.note {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--warn-soft);
+  border: 1px solid var(--warn-line);
+  border-radius: 10px;
+}
+.note__title {
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--warn);
+}
+.note__title i { margin-right: 6px; }
+.note__text { font-size: 13px; line-height: 1.6; color: var(--note-text); }
+
+@media (max-width: 860px) {
+  .icard__grid { grid-template-columns: 1fr; }
+  .photo--empty { height: 160px; }
+}

@@ -1,0 +1,41 @@
+/* ─── Header ──────────────────────────────────────────────── */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--glass-head);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.header__actions { display: flex; align-items: center; gap: 8px; }
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--accent-grad);
+  box-shadow: 0 6px 18px rgba(91, 70, 229, .4), inset 0 1px 0 rgba(255, 255, 255, .3);
+  color: #fff;
+  font-size: 14px;
+}
+.brand__name { font-size: 16px; font-weight: 800; line-height: 1; letter-spacing: -.3px; color: var(--text); }
+.brand__sub  { font-size: 10px; letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+
+@media (max-width: 480px) {
+  .brand__sub { display: none; }
+}

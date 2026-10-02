@@ -1,0 +1,124 @@
+/* ─────────────────────────────────────────────────────────────
+   Theme tokens. Every colour in the app comes from here —
+   change the palette in this file only.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  color-scheme: dark;
+
+  /* Background */
+  --bg: #0c0a1d;
+  --blob-1: rgba(124, 58, 237, .55);
+  --blob-2: rgba(219, 39, 119, .40);
+  --blob-3: rgba(37, 99, 235, .45);
+  --blob-4: rgba(6, 182, 212, .30);
+
+  /* Glass surfaces */
+  --glass: rgba(255, 255, 255, .055);
+  --glass-strong: rgba(22, 18, 48, .82);
+  --glass-head: rgba(14, 11, 34, .72);
+  --menu: rgba(24, 19, 52, .97);
+  --inset: rgba(8, 6, 24, .45);
+  --chip: rgba(255, 255, 255, .08);
+  --blur: blur(22px) saturate(160%);
+  --hl: inset 0 1px 0 rgba(255, 255, 255, .08);
+  --shadow: 0 16px 48px rgba(0, 0, 0, .45);
+  --overlay: rgba(6, 4, 20, .55);
+
+  /* Lines */
+  --line: rgba(255, 255, 255, .12);
+  --line-soft: rgba(255, 255, 255, .07);
+  --line-strong: rgba(167, 139, 250, .55);
+
+  /* Text */
+  --text: #f4f3ff;
+  --text-1: #dcdcf5;
+  --text-2: #b4b7d8;
+  --text-3: #9ca0c9;
+  --muted: #8f93bd;
+  --faint: rgba(255, 255, 255, .18);
+
+  /* Accent */
+  --accent: #a5b4fc;
+  --accent-grad: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  --accent-glow: 0 6px 20px rgba(91, 70, 229, .35);
+  --accent-soft: rgba(129, 140, 248, .16);
+  --accent-line: rgba(129, 140, 248, .40);
+  --accent-ring: rgba(129, 140, 248, .30);
+
+  /* Status */
+  --ok: #86efac;
+  --ok-bg: rgba(22, 101, 52, .35);
+  --ok-line: rgba(134, 239, 172, .35);
+  --warn: #fbbf24;
+  --warn-soft: rgba(251, 191, 36, .12);
+  --warn-line: rgba(251, 191, 36, .30);
+  --note-text: #e9dcae;
+  --danger: #f87171;
+  --danger-bg: rgba(127, 29, 29, .40);
+  --danger-line: rgba(248, 113, 113, .40);
+
+  /* Misc */
+  --opt-bg: #1b1640;
+  --cat-mix: 62%;  /* how much of the category hue goes into badge text */
+
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f6eefc;
+  --blob-1: rgba(236, 72, 153, .38);
+  --blob-2: rgba(168, 85, 247, .32);
+  --blob-3: rgba(96, 165, 250, .38);
+  --blob-4: rgba(244, 114, 182, .30);
+
+  --glass: rgba(255, 255, 255, .50);
+  --glass-strong: rgba(255, 255, 255, .88);
+  --glass-head: rgba(255, 255, 255, .72);
+  --menu: rgba(255, 255, 255, .97);
+  --inset: rgba(255, 255, 255, .62);
+  --chip: rgba(99, 102, 241, .09);
+  --blur: blur(22px) saturate(170%);
+  --hl: inset 0 1px 0 rgba(255, 255, 255, .9);
+  --shadow: 0 16px 40px rgba(76, 29, 149, .14);
+  --overlay: rgba(60, 30, 110, .25);
+
+  --line: rgba(255, 255, 255, .85);
+  --line-soft: rgba(76, 29, 149, .09);
+  --line-strong: rgba(124, 58, 237, .45);
+
+  --text: #1e1b4b;
+  --text-1: #2e2a5e;
+  --text-2: #4b4778;
+  --text-3: #5f5b8c;
+  --muted: #6b6796;
+  --faint: rgba(76, 29, 149, .22);
+
+  --accent: #4f46e5;
+  --accent-soft: rgba(79, 70, 229, .10);
+  --accent-line: rgba(79, 70, 229, .30);
+  --accent-ring: rgba(79, 70, 229, .22);
+
+  --ok: #15803d;
+  --ok-bg: rgba(220, 252, 231, .85);
+  --ok-line: rgba(21, 128, 61, .30);
+  --warn: #b45309;
+  --warn-soft: rgba(254, 243, 199, .75);
+  --warn-line: rgba(180, 83, 9, .25);
+  --note-text: #713f12;
+  --danger: #dc2626;
+  --danger-bg: rgba(254, 226, 226, .9);
+  --danger-line: rgba(220, 38, 38, .35);
+
+  --opt-bg: #ffffff;
+  --cat-mix: 42%;
+}
+
+/* Browsers without backdrop-filter get denser panels instead of see-through ones */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root { --glass: rgba(24, 20, 52, .92); }
+  :root[data-theme="light"] { --glass: rgba(255, 255, 255, .92); }
+}

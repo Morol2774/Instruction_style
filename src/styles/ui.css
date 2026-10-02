@@ -1,0 +1,147 @@
+/* ─── Shared UI: buttons, inputs, labels, tags, tables ───── */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: filter .15s, background .15s, border-color .15s;
+}
+.btn:not(:disabled):hover { filter: brightness(1.08); }
+
+.btn-primary {
+  padding: 10px 20px;
+  border: none;
+  background: var(--accent-grad);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, .25);
+}
+.btn-ghost  { background: var(--chip); border-color: var(--line); color: var(--text-1); }
+.btn-danger { background: none; border-color: var(--danger-line); color: var(--danger); }
+.btn-sm     { padding: 6px 12px; font-size: 12px; }
+.btn-square { padding: 9px 12px; }
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+}
+.icon-btn--lg { font-size: 18px; }
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--inset);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+.input.is-error { border-color: var(--danger); }
+.input--mono { font-family: var(--font-mono); font-size: 13px; }
+select.input { cursor: pointer; }
+textarea.input { resize: vertical; min-height: 80px; line-height: 1.6; }
+
+.field-error { margin-top: 4px; font-size: 11px; color: var(--danger); }
+
+/* Labels */
+.label,
+.section-label,
+.list-heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label         { margin-bottom: 6px;  font-size: 11px; letter-spacing: .7px; }
+.section-label { margin-bottom: 10px; font-size: 11px; letter-spacing: .8px; }
+.section-label i { margin-right: 6px; }
+.list-heading  { margin-bottom: 16px; font-size: 12px; letter-spacing: .8px; }
+
+/* Tags */
+.tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.tags--tight { gap: 5px; }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.tag--sm { padding: 2px 8px; font-size: 10px; }
+
+/* --cat is set per badge from the category colour */
+.tag-cat {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  background: color-mix(in srgb, var(--cat) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat) 35%, transparent);
+  color: color-mix(in srgb, var(--cat) var(--cat-mix), var(--text));
+}
+.tag-part {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.tag-part.tag--sm { font-size: 11px; }
+.tag-sub { background: var(--chip); color: var(--text-2); }
+.tag-sym { background: var(--warn-soft); color: var(--warn); border: 1px solid var(--warn-line); }
+.tag-sym i { font-size: 10px; }
+
+/* Data tables */
+.dtable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.dtable th {
+  padding: 9px 14px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-2);
+  background: var(--chip);
+  border-bottom: 1px solid var(--line);
+}
+.dtable td {
+  padding: 9px 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-1);
+  border-bottom: 1px solid var(--line-soft);
+}
+.dtable tbody tr:last-child td { border-bottom: none; }
+.dtable tbody tr:nth-child(even) { background: var(--inset); }
+
+.dtable .col-60 { width: 60%; }
+.dtable .col-35 { width: 35%; }
+
+.td-action { font-weight: 600; color: var(--ok); }
+.td-action.is-quote { color: var(--warn); }
+.td-code { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--accent); }

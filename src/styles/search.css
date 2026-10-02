@@ -1,0 +1,128 @@
+/* ─── Hero, stats, search form, results list ─────────────── */
+
+.hero { padding: 40px 0 32px; }
+.hero__head { margin-bottom: 32px; }
+.hero__title {
+  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.5px;
+  color: var(--text);
+}
+.hero__sub { font-size: 15px; color: var(--muted); }
+
+/* Stats */
+.stats { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 14px;
+}
+.stat i { font-size: 13px; color: var(--accent); }
+.stat__val { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--text); }
+.stat__label { font-size: 12px; color: var(--muted); }
+
+/* Search card.
+   position + z-index lift the whole card (and its autocomplete menus)
+   above the results list — backdrop-filter creates its own stacking context. */
+.search {
+  position: relative;
+  z-index: 20;
+  padding: 28px;
+  border-radius: 22px;
+}
+.step { margin-bottom: 20px; }
+.step__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.step__label--primary { color: var(--accent); }
+.step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+.step__label--primary .step__num { background: var(--accent-soft); border-color: var(--accent-line); }
+
+.search__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+.search__count { font-size: 13px; color: var(--muted); }
+
+/* Autocomplete */
+.autoinput { position: relative; }
+.autoinput__field { position: relative; }
+.autoinput__icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: var(--muted);
+  pointer-events: none;
+}
+.autoinput .input.has-icon { padding-left: 36px; }
+.autoinput__clear {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.autoinput__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  overflow: hidden;
+  background: var(--menu);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.autoinput__item {
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-1);
+  cursor: pointer;
+  transition: background .1s;
+}
+.autoinput__item:hover { background: var(--chip); }
+
+/* Results */
+.card-list { display: flex; flex-direction: column; gap: 8px; }
+.card-slot {
+  border-radius: 18px;
+  outline: 2px solid transparent;
+  transition: outline-color .3s;
+}
+.card-slot.is-active { outline-color: var(--accent); }
+
+.empty { padding: 60px 20px; text-align: center; color: var(--muted); }
+.empty i { display: block; margin-bottom: 16px; font-size: 36px; }
+.empty__title { margin-bottom: 8px; font-size: 16px; font-weight: 600; color: var(--text-3); }
+.empty__text { font-size: 13px; }
